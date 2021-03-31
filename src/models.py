@@ -26,6 +26,27 @@ class Address(Base):
     person_id = Column(Integer, ForeignKey('person.id'))
     person = relationship(Person)
 
+class Character(Base):
+    __tablename__ = 'character'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), nullable=False)
+    description = Column(String(250))
+    hair_color = Column(String(250))
+    image = Column(String(250))
+    gender = Column(String(250))
+    height = Column(Integer)
+
+class Planet(Base):
+    __tablename__ = 'planet'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), nullable=False)
+    diameter = Column(Integer)
+    rotation_period = Column(Integer)
+    orbital_period = Column(Integer)
+    image = (String(250))
+    climate = (String(250))
+    terrain = (String(250))
+
     def to_dict(self):
         return {}
 
