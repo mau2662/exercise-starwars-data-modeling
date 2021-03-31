@@ -61,9 +61,8 @@ class User(Base):
     name = Column(String(250), nullable=False)
     email = Column(String(250))
     password = Column(String(250))
-    favorite_character_user = Column(String(250),ForeignKey('favorites.character_fav'))
-    
-    favorite_planet_user = Column(String(250),ForeignKey('favorites.planet_fav'))
+    fav = Column(String(250),ForeignKey("favorites.id"))
+    favorites = relationship("Favorites")
    
 
 
